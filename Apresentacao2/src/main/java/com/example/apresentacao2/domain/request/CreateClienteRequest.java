@@ -30,15 +30,20 @@ public class CreateClienteRequest {
 
     @JsonProperty("rua")
     private String rua;
+    @JsonProperty("n_casa")
+    private String numeroCs;
+    @JsonProperty("celular")
+    private String celular;
 
-
-    public Cliente toEntiye(){
+    public Cliente toEntity(){
         return Cliente.builder()
                 .nome(nome)
                 .cpf(cpf)
                 .cidade(cidade)
                 .bairro(bairro)
                 .rua(rua)
+                .numeroCs(numeroCs)
+                .celular(celular)
                 .build();
     }
 

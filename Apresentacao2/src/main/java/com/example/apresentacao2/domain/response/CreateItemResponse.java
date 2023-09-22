@@ -14,9 +14,9 @@ import lombok.Setter;
 public class CreateItemResponse {
 
 
-    private long id;
+    private Long id;
     private String nome;
-    private Integer qtd;
+    private Double qtd;
     @NotNull
     @Min(value = 0)
     private Integer minimo;

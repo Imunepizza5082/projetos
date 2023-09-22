@@ -10,6 +10,8 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
 
     Boolean existsByNomeEqualsIgnoreCase(String nome);
+
+    Item findByNome(String nome);
 }
 
 

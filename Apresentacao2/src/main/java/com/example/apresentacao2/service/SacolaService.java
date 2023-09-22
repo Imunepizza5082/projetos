@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,20 +17,24 @@ public class SacolaService {
     @Autowired
     private SacolaRepository sacolaRepository;
 
-    public Sacola saveItem(Sacola sacola){
-        var sacolaExist = sacolaRepository.existsBySacola(sacola.getId());
+        public Sacola saveSacola(Sacola sacola){
+        var sacolaExist = sacolaRepository.existsById(sacola.getId());
         if (sacolaExist){
-            throw new RuntimeException("A sacola ja esta aberta");
+            throw new RuntimeException("A sacola já esta aberta");
         }
-        return sacolaRepository.save(sacola);
+            return sacolaRepository.save(sacola);
     }
 
-    public List<Sacola> buscarSacola() {
+    public List<Sacola> buscarItensSacola() {
         return sacolaRepository.findAll();
     }
 
-    public Sacola adicionar(Sacola adicionar){
-        return sacolaRepository.save(adicionar);
+
+    public void removerItem(Long itemId){
+        sacolaRepository.deleteById(itemId);
     }
+
+
 }
+
 

@@ -3,12 +3,12 @@ package com.example.apresentacao2.domain.response;
 
 import com.example.apresentacao2.entity.Cliente;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class CreateClienteResponse {
 
     private Long id;

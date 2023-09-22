@@ -24,7 +24,7 @@ public class Item {
     private String nome;
 
     @Column(name = "QTD")
-    private Integer qtd;
+    private Double qtd;
 
     @Column(name = "MIN")
     private Integer min;

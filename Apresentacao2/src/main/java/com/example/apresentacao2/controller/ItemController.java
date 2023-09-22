@@ -40,7 +40,7 @@ public class ItemController {
         return new CreateItemResponse(entity);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/atualizar:/{id}")
     public ResponseEntity<Item> atualizarItem(@PathVariable Long id, @RequestBody Item novoItem){
         Optional<Item> itemOptional = itemRepository.findById(id);
 

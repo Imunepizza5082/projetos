@@ -5,16 +5,12 @@ import com.example.apresentacao2.entity.Item;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Validated
 public class CreateItemRequest {
 
@@ -22,7 +18,7 @@ public class CreateItemRequest {
     private String name;
 
     @JsonProperty("qtd")
-    private Integer qtd;
+    private Double qtd;
 
     @JsonProperty("min")
     private Integer min = 0;

@@ -34,10 +34,10 @@ public class Cliente {
     @Column(name = "RUA")
     private String rua;
 
+    @Column(name = "N_CASA")
+    private String numeroCs;
+
     @Column(name = "CELULAR")
     private String celular;
-
-    @Column(name = "N_CASA")
-    private String numero;
 
 }

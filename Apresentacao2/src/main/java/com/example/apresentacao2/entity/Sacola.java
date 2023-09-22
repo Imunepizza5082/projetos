@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -21,8 +24,8 @@ public class Sacola {
     @Column(name = "ITEM_NAME")
     private String nome;
 
-    @Column(name = "PRECO")
-    private Double preco;
+    @Column(name = "VALOR")
+    private Double valor;
 
     @Column(name = "QTD")
     private Integer qtd;
@@ -30,4 +33,6 @@ public class Sacola {
     @Column(name = "TOTAL")
     private Double total;
 
+    @OneToMany
+    public List<ItemSacola> itens = new ArrayList<>();
 }

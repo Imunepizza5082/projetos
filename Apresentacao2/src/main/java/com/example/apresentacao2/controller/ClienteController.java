@@ -39,18 +39,21 @@ public class ClienteController {
             @Valid
             @RequestBody CreateClienteRequest createClienteRequest
     ) {
-        var cliente = createClienteRequest.toEntiye();
+        var cliente = createClienteRequest.toEntity();
         var entity = clienteService.save(cliente);
         return new CreateClienteResponse(entity);
+
+
     }
     @PostMapping("/clientes")
     public ResponseEntity<Cliente> addCliente(@Valid @RequestBody Cliente cliente){
         clienteService.addCliente(cliente);
         return ResponseEntity.ok(cliente);
     }
-    @PutMapping("/cliente")
-    public ResponseEntity<String> atualizarCliente(@PathVariable Long id,@Valid @RequestBody Cliente novoCliente){
+    @PutMapping("/clientes")
+    public ResponseEntity<String> update(@PathVariable Long id,@Valid @RequestBody Cliente novoCliente){
         return ResponseEntity.ok("Cliente atualizado com sucesso");
     }
+
 
 }

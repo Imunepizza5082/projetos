@@ -35,7 +35,6 @@ public class ClienteService {
         return clienteRepository.existsByCpf(cliente.getCpf());
     }
 
-
     public List<Cliente> buscarTodosClientes(){
         return clienteRepository.findAll();
     }

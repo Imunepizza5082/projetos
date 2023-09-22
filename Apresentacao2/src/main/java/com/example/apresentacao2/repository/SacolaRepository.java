@@ -4,5 +4,5 @@ import com.example.apresentacao2.entity.Sacola;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SacolaRepository extends JpaRepository<Sacola, Long> {
-        Boolean existsBySacola(Long id);
+        boolean existsById(Long id);
 }
